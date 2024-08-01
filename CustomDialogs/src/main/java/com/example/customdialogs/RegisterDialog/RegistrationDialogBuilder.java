@@ -16,6 +16,7 @@ public class RegistrationDialogBuilder {
     private int containerId; // ID of the container to host the fragment
     private String buttonText = null;
     private int dialogColor = -1;
+    private String dialogRegisterTitle = "Sign in";
     private OnRegistrationCompleteListener onRegistrationCompleteListener;
 
     // Constructor to initialize necessary components
@@ -40,6 +41,11 @@ public class RegistrationDialogBuilder {
         this.buttonText = buttonText;
         return this;
 
+    }
+
+    public RegistrationDialogBuilder setDialogRegisterTitle(String dialogRegisterTitle) {
+        this.dialogRegisterTitle = dialogRegisterTitle;
+        return this;
     }
 
     public RegistrationDialogBuilder setDialogColor(int dialogColor) {
@@ -91,19 +97,19 @@ public class RegistrationDialogBuilder {
 
         //The developer change the color dialog and text of the button
         if(dialogColor != -1 && buttonText != null)
-            registrationFragment = new RegistrationDialogFragment(options, buttonText, dialogColor);
+            registrationFragment = new RegistrationDialogFragment(dialogRegisterTitle,options, buttonText, dialogColor);
 
         //The developer change only the color dialog of the button
         else if (dialogColor != -1 && buttonText == null)
-            registrationFragment = new RegistrationDialogFragment(options, dialogColor);
+            registrationFragment = new RegistrationDialogFragment(dialogRegisterTitle,options, dialogColor);
 
         //The developer change only the text of the button
         else if (dialogColor == -1 && buttonText != null)
-            registrationFragment = new RegistrationDialogFragment(options, buttonText);
+            registrationFragment = new RegistrationDialogFragment(dialogRegisterTitle,options, buttonText);
 
         //The developer didn't change the color dialog and text of the button
         else
-            registrationFragment = new RegistrationDialogFragment(options);
+            registrationFragment = new RegistrationDialogFragment(dialogRegisterTitle,options);
 
         //set the callback
         registrationFragment.setOnRegistrationCompleteListener(onRegistrationCompleteListener);

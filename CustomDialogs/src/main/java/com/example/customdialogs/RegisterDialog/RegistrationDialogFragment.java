@@ -22,30 +22,36 @@ import com.google.android.material.button.MaterialButton;
 import java.util.List;
 
 public class RegistrationDialogFragment extends DialogFragment {
-    private static String DEFAULT_BUTTON_TEXT = "Register";
+    private static String DEFAULT_DIALOG_TITLE = "Sign in";
+    private static String DEFAULT_BUTTON_TEXT = "Sign in";
     private static String DEFAULT_DIALOG_COLOR = "#42A5F5"; //blue 400 primary
 
     private List<RegistrationOption> options;
     private String buttonText = DEFAULT_BUTTON_TEXT;
+    private String dialogRegisterTitle = DEFAULT_DIALOG_TITLE;
     private int dialogColor = Color.parseColor(DEFAULT_DIALOG_COLOR);
     private OnRegistrationCompleteListener onRegistrationCompleteListener;
 
-    public RegistrationDialogFragment(List<RegistrationOption> options) {
+    public RegistrationDialogFragment(String dialogRegisterTitle, List<RegistrationOption> options) {
+        this.dialogRegisterTitle = dialogRegisterTitle;
         this.options = options;
     }
 
-    public RegistrationDialogFragment(List<RegistrationOption> options, String buttonText, int buttonColor) {
+    public RegistrationDialogFragment(String dialogRegisterTitle, List<RegistrationOption> options, String buttonText, int buttonColor) {
+        this.dialogRegisterTitle = dialogRegisterTitle;
         this.options = options;
         this.buttonText = buttonText;
         this.dialogColor = buttonColor;
     }
 
-    public RegistrationDialogFragment(List<RegistrationOption> options, int dialogColor) {
+    public RegistrationDialogFragment(String dialogRegisterTitle, List<RegistrationOption> options, int dialogColor) {
+        this.dialogRegisterTitle = dialogRegisterTitle;
         this.options = options;
         this.dialogColor = dialogColor;
     }
 
-    public RegistrationDialogFragment(List<RegistrationOption> options, String buttonText) {
+    public RegistrationDialogFragment(String dialogRegisterTitle, List<RegistrationOption> options, String buttonText) {
+        this.dialogRegisterTitle = dialogRegisterTitle;
         this.options = options;
         this.buttonText = buttonText;
     }
@@ -87,8 +93,9 @@ public class RegistrationDialogFragment extends DialogFragment {
         }
 
         //set custom dialog "sign in" text
-        TextView sign_in_title = card_inner_layout.findViewById(R.id.sign_in_title);
-        sign_in_title.setTextColor(dialogColor);
+        TextView dialog_register_title = card_inner_layout.findViewById(R.id.dialog_register_title);
+        dialog_register_title.setText(dialogRegisterTitle);
+        dialog_register_title.setTextColor(dialogColor);
 
         //set custom dialog button
         Button registerButton = createButtonProgrammatically();

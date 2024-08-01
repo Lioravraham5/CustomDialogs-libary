@@ -24,7 +24,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/sign_in_title"
+                android:id="@+id/dialog_register_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Sign in"

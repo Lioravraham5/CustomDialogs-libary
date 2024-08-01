@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Set button text and color
         builder.setButtonText("Sign Up");
+        builder.setDialogRegisterTitle("Sign up to create account");
         //builder.setDialogColor(Color.parseColor("#FF5983"));
 
         builder.setOnRegistrationCompleteListener(new OnRegistrationCompleteListener() {
