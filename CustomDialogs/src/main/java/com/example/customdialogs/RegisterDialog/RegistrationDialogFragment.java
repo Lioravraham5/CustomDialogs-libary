@@ -3,6 +3,7 @@ package com.example.customdialogs.RegisterDialog;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -77,17 +78,8 @@ public class RegistrationDialogFragment extends DialogFragment {
         for (RegistrationOption option : options) {
             View field = inflater.inflate(R.layout.item_registration_option, card_inner_layout, false);
 
-            ImageView icon = field.findViewById(R.id.option_icon);
-            EditText editText = field.findViewById(R.id.option_edit_text);
-
-            // Retrieve the drawable background and cast it to GradientDrawable
-            GradientDrawable drawable = (GradientDrawable) editText.getBackground();
-            drawable.setStroke(2, dialogColor); // 2 is the stroke width in pixels
-            editText.setHint(option.getHint());
-            editText.setTag(option.getOptionType());
-
-            icon.setImageResource(option.getIconResId());
-            icon.setColorFilter(dialogColor);
+            createEditText(field, option); //create editText in field
+            createIcon(field, option); // create Icon in field
 
             card_inner_layout.addView(field);
         }
@@ -121,6 +113,24 @@ public class RegistrationDialogFragment extends DialogFragment {
         });
 
         return view;
+    }
+
+    private void createIcon(View field, RegistrationOption option) {
+        ImageView icon = field.findViewById(R.id.option_icon);
+        icon.setImageResource(option.getIconResId());
+        icon.setColorFilter(dialogColor);
+    }
+
+    private void createEditText(View field, RegistrationOption option) {
+        EditText editText = field.findViewById(R.id.option_edit_text);
+        // Retrieve the drawable background and cast it to GradientDrawable
+        GradientDrawable drawable = (GradientDrawable) editText.getBackground();
+        drawable.setStroke(2, dialogColor); // 2 is the stroke width in pixels
+        editText.setHint(option.getHint());
+        editText.setTag(option.getOptionType());
+        if (option.getOptionType() == SupportedRegisterOptions.AllSupportedOption.PASSWORD){
+            editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
     }
 
     private boolean validateAllOptions() {

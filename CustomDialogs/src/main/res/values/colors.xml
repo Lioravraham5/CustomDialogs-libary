@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFFFF</color>
+
     <color name="blue_400_primary">#42A5F5</color>
     <color name="purple">#8692f7</color>
+
+    <color name="dialog_color_1">#FDD736</color>
+    <color name="dialog_color_2">#3B5796</color>
+    <color name="grey_700_primary">#616161</color>
+    <color name="light_blue_900_light">#4F83CC</color>
+    <color name="grey_400_primary">#BDBDBD</color>
 
 </resources>

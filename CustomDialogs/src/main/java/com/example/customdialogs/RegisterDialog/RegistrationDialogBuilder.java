@@ -91,7 +91,7 @@ public class RegistrationDialogBuilder {
     }
 
     // Method to show the registration fragment
-    public void show() {
+    public void showRegistrationDialog() {
 
         RegistrationDialogFragment registrationFragment;
 
