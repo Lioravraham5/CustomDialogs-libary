@@ -1,5 +1,6 @@
 package com.example.customdialogsproject;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
 //        builder.showRegistrationDialog();
 
         String testPackageName = "com.whatsapp"; // Example package name
-        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(getSupportFragmentManager(), testPackageName);
+        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(getSupportFragmentManager(), testPackageName, Color.parseColor("#BB002F"));
+//        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(getSupportFragmentManager(), testPackageName);
         ratingAppDialogBuilder.showRatingDialog();
 
 
