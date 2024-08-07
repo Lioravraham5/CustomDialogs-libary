@@ -2,12 +2,15 @@ package com.example.customdialogsproject;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.customdialogs.RatingDialog.RatingAppDialogBuilder;
+import com.example.customdialogs.RatingDialog.RatingAppDialogCallback;
 import com.example.customdialogs.RatingDialog.RatingAppDialogFragment;
+import com.example.customdialogs.RatingDialog.RatingAppOnStoreDialogCallback;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -45,8 +48,25 @@ public class MainActivity extends AppCompatActivity {
 //        builder.showRegistrationDialog();
 
         String testPackageName = "com.whatsapp"; // Example package name
-        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(getSupportFragmentManager(), testPackageName, Color.parseColor("#BB002F"));
-//        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(getSupportFragmentManager(), testPackageName);
+        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(
+                getSupportFragmentManager(),
+                testPackageName,
+                4,
+                Color.parseColor("#BB002F"),
+                new RatingAppDialogCallback() {
+            @Override
+            public void onRatingSubmitted(float rating) {
+                //your code on rate submit
+                Log.d("User Rate app", "" + rating);
+            }
+        }, new RatingAppOnStoreDialogCallback() {
+            @Override
+            public void onStoreReference() {
+                //your code on store reference
+                Log.d("I'm in store", "hello");
+            }
+        });
+
         ratingAppDialogBuilder.showRatingDialog();
 
 
