@@ -3,6 +3,7 @@ package com.example.customdialogsproject;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,8 @@ import com.example.customdialogs.RatingDialog.RatingAppDialogBuilder;
 import com.example.customdialogs.RatingDialog.RatingAppDialogCallback;
 import com.example.customdialogs.RatingDialog.RatingAppDialogFragment;
 import com.example.customdialogs.RatingDialog.RatingAppOnStoreDialogCallback;
+import com.example.customdialogs.RegisterDialog.OnRegistrationCompleteListener;
+import com.example.customdialogs.RegisterDialog.RegistrationDialogBuilder;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,10 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
         String testPackageName = "com.whatsapp"; // Example package name
         RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(
+                this,
                 getSupportFragmentManager(),
                 testPackageName,
                 4,
-                Color.parseColor("#BB002F"),
+                -1,
                 new RatingAppDialogCallback() {
             @Override
             public void onRatingSubmitted(float rating) {
@@ -68,7 +72,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ratingAppDialogBuilder.showRatingDialog();
-
-
     }
 }

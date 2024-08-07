@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#FFFFFFFF</color>
+    <color name="rate_dialog_background">#FFFFFFFF</color>
 
+    <color name="button_text_color">#FFFFFFFF</color>
     <color name="blue_400_primary">#42A5F5</color>
     <color name="purple">#8692f7</color>
 
