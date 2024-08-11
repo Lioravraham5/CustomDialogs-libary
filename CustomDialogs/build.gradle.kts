@@ -30,6 +30,9 @@ android {
 
 dependencies {
 
+    implementation("org.jsoup:jsoup:1.13.1")
+    implementation("com.google.android.play:app-update:2.1.0")
+
     implementation(libs.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
