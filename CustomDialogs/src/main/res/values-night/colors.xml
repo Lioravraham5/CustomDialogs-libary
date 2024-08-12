@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="rate_dialog_background">#FFFFFFFF</color>
+
+    <color name="button_text_color">#000000</color>
+
+    <color name="blue_400_primary">#0D47A1</color> <!-- Darker blue -->
+    <color name="purple">#5E35B1</color> <!-- Darker purple -->
+    <color name="dialog_color_1">#000000</color> <!-- black -->
+    <color name="dialog_color_2">#1A237E</color> <!-- Darker blue -->
+    <color name="grey_700_primary">#616161</color>
+    <color name="light_blue_900_light">#1565C0</color> <!-- Darker light blue -->
+    <color name="grey_400_primary">#90A4AE</color> <!-- Lighter grey -->
+
+</resources>
