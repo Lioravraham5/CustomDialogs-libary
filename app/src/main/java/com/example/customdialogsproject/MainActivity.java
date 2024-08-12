@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
 //        updateManager.checkForUpdate();
 //
 
-
-        ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(this, getSupportFragmentManager(), R.id.registration_container, getPackageName());
+        ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container, getPackageName(),-1);
         builder.showFragment();
 
     }
