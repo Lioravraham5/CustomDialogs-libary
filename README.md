@@ -258,4 +258,14 @@ limitations under the License.
 ```
 
 ## Credits
-CustomRegisterLibrary was created by Lior Avraham. 
+All images and icons used in this library were sourced from [www.flaticon.com](https://www.flaticon.com/).
+
+### Rating App DialogFragment:
+- **Star Image:** Sourced from Flaticon
+- **Emoji Images:** Sourced from Flaticon
+- **Google Store Image:** Sourced from Flaticon
+- **Green Checkmark (V) Image:** Sourced from Flaticon
+
+### Profile Image Picker Fragment:
+- **Default Profile Image:** Sourced from Flaticon
+
