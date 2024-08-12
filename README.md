@@ -32,11 +32,23 @@ dependencies {
 
 **2) Validation:** Built-in validation checks for each registration option, ensuring data integrity and accuracy (e.g., email format, password strength, etc.).
 
-**3) Customizable UI:** Developers can customize the dialog's appearance, including the title, button text, and button color.
+**3) Customizable UI:** Developers can customize the dialog's appearance, including the title, button text, and button color and icons.
 
 **4) Callback Mechanism:** Provides a callback interface (OnRegistrationCompleteListener) to notify when the registration process is successfully completed.
 
-**5) Dark mode support:** The dialog automatically adapts its color scheme for dark mode (only by using the default color). 
+**5) Dark mode support:** The dialog automatically adapts its color scheme for dark mode
+
+Default DialogFragment:
+<div style="display: flex; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/6c72172f-8161-4411-94f7-c98f4c06c3ab" alt="Image 1" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/fa6c53ca-190c-4812-af29-4a10ebf36d4d" alt="Image 2" style="width: 15%; height: 15%;">
+</div>
+
+Custom color & Dark mode:
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/15be8f34-3226-4014-a5a5-91fd1b844240" alt="Image 2" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/135272e6-1b37-4523-bf6b-88a72d6ac953" alt="Image 1" style="width: 15%; height: 15%;">
+</div>
 
 #### How to use it:
 
@@ -108,6 +120,18 @@ builder.showRegistrationDialog();
 
 **5) Dark mode support:** The dialog automatically adapts its color scheme for dark mode (only by using the default color).
 
+<div style="display: flex; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/54d658ea-9ebe-4fad-add0-af1e737c1d23" alt="Image 2" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/1bf2578d-1941-4959-91bf-266bcebc465b" alt="Image 1" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/f634a903-9884-4deb-ab37-8fb975bf6257" alt="Image 1" style="width: 15%; height: 15%;">
+</div>
+
+Custom color & Dark mode:
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/d863c795-1a70-40ae-a496-0f7a237354f0" alt="Image 2" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/7211ffa9-75fc-4ca9-bc33-6ef3b403a874" alt="Image 1" style="width: 15%; height: 15%;">
+</div>
+
 #### How to use it:
 
 **1) Create an Instance of RatingAppDialogBuilder:** Initialize a RatingAppDialogBuilder with the necessary parameters, such as Context, FragmentManager, package name, and others.
@@ -149,6 +173,13 @@ ratingAppDialogBuilder.showRatingDialog();
 
 **3) Persistent Image Storage:**  The selected or captured image is saved locally, and the URI is stored in *SharedPreferences* for persistent use.
 
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/a168d5cb-73ea-40e8-b32c-265e4adee16b" alt="Image 2" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/e81a42dd-89d4-4731-ac34-d3167385713e" alt="Image 1" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/4af84b6a-ee6b-4e3e-94b7-0d1a5ef09f5e" alt="Image 1" style="width: 15%; height: 15%;">
+  <img src="https://github.com/user-attachments/assets/7a87c4b7-f674-41aa-b80b-bc0921d888ad" alt="Image 2" style="width: 15%; height: 15%;">
+</div>
+
 #### How to use it
 
  **1. Setup Permissions and Provider in AndroidManifest.xml:**
@@ -182,6 +213,7 @@ ratingAppDialogBuilder.showRatingDialog();
 ```
 
 **3. Add a Container in Your Layout:**
+
 Notice: For a better display the layout_width should be equal to the layout_height
 ```
 FrameLayout
