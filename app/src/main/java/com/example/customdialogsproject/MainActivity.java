@@ -1,26 +1,35 @@
 package com.example.customdialogsproject;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.customdialogs.NewAppUpdateDialog.InAppUpdateManager;
 import com.example.customdialogs.ProfileImagePickerDialog.ProfileImagePickerFragmentBuilder;
+import com.example.customdialogs.RatingDialog.RatingAppDialogBuilder;
+import com.example.customdialogs.RatingDialog.RatingAppDialogCallback;
+import com.example.customdialogs.RatingDialog.RatingAppOnStoreDialogCallback;
+import com.example.customdialogs.RegisterDialog.OnRegistrationCompleteListener;
+import com.example.customdialogs.RegisterDialog.RegistrationDialogBuilder;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private InAppUpdateManager updateManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        TextView title = findViewById(R.id.my_title);
-//
-//        RegistrationDialogBuilder builder = new RegistrationDialogBuilder(this, getSupportFragmentManager(), R.id.registration_container);
-//
+
+        //Test: Registration DialogFragment
+        TextView title = findViewById(R.id.my_title);
+
+        RegistrationDialogBuilder builder = new RegistrationDialogBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container);
+
 //        // Add registration options
 //        builder.addNameOption(R.drawable.user, "Enter your name");
 //        builder.addLastNameOption(R.drawable.user, "Enter your last name");
@@ -30,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //        // Set button text and color
 //        builder.setButtonText("Sign Up");
 //        builder.setDialogRegisterTitle("Sign up to create account");
-//        //builder.setDialogColor(Color.parseColor("#FF5983"));
+//        builder.setDialogColor(Color.parseColor("#FF8A80"));
 //
 //        builder.setOnRegistrationCompleteListener(new OnRegistrationCompleteListener() {
 //            @Override
@@ -41,13 +50,14 @@ public class MainActivity extends AppCompatActivity {
 //
 //        builder.showRegistrationDialog();
 
+//        //Test: Rating app DialogFragment
 //        String testPackageName = "com.whatsapp"; // Example package name
 //        RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(
 //                this,
 //                getSupportFragmentManager(),
 //                testPackageName,
 //                4,
-//                -1,
+//                Color.parseColor("#9B0000"),
 //                new RatingAppDialogCallback() {
 //            @Override
 //            public void onRatingSubmitted(float rating) {
@@ -64,13 +74,9 @@ public class MainActivity extends AppCompatActivity {
 //
 //        ratingAppDialogBuilder.showRatingDialog();
 
-//        updateManager = new InAppUpdateManager(this);
-//        updateManager.setUpdateListener(this);
-//        updateManager.checkForUpdate();
-//
-
-        ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container, getPackageName(),-1);
-        builder.showFragment();
+//        //Test: ProfileImagePicker Fragment
+//        ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container, getPackageName(),-1);
+//        builder.showFragment();
 
     }
 
