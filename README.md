@@ -40,7 +40,7 @@ dependencies {
 
 #### How to use it:
 
-1) **Add a Frame Layout to the Activity's XML Layout**:
+**1. Add a Frame Layout to the Activity's XML Layout**:
 ```
 <!-- res/layout/activity_main.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,26 +59,26 @@ dependencies {
 </RelativeLayout>
 ``` 
 
-2) **Initialize RegistrationDialogBuilder:** Create an instance of "RegistrationDialogBuilder" in your activity or fragment.
+**2. Initialize RegistrationDialogBuilder:** Create an instance of "RegistrationDialogBuilder" in your activity or fragment.
 ```
 RegistrationDialogBuilder builder = new RegistrationDialogBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container);
 ```
 
-3) **Add Registration Options:** Add desired registration options using "addXXXOption" methods.
+**3. Add Registration Options:** Add desired registration options using "addXXXOption" methods.
 ```
 builder.addNameOption(R.drawable.user, "Enter your name");
 builder.addEmailOption(R.drawable.ic_mail, "Enter your email");
 // Add more options as needed
 
 ```
-4) **Customize the Dialog:** You can customize the dialog’s button text, title, and color:
+**4. Customize the Dialog:** You can customize the dialog’s button text, title, and color:
 ```
 builder.setButtonText("Sign Up");
 builder.setDialogRegisterTitle("Sign up to create account");
 builder.setDialogColor(Color.parseColor("#FF8A80"));
 ```
 
-5) **Set Completion Listener:** Set a listener to handle registration completion
+**5. Set Completion Listener:** Set a listener to handle registration completion
 ```
 builder.setOnRegistrationCompleteListener(new OnRegistrationCompleteListener() {
     @Override
@@ -87,12 +87,12 @@ builder.setOnRegistrationCompleteListener(new OnRegistrationCompleteListener() {
     }
 });
 ```
-6) **Show Registration Fragment:** Display the registration fragment by calling show().
+**6. Show Registration Fragment:** Display the registration fragment by calling show().
 ```
 builder.showRegistrationDialog();
 ```
 
-### RatingApp DialogFragment
+### Rating App DialogFragment
 
 #### Features:
 
@@ -139,9 +139,74 @@ RatingAppDialogBuilder ratingAppDialogBuilder = new RatingAppDialogBuilder(
 ratingAppDialogBuilder.showRatingDialog();
 ```
 
+### Profile Image Picker Fragment
 
+#### Features: 
 
+**1) Customizable Profile Image:** Allows developers to set a custom placeholder image for the profile picture.
 
+**2) Image Source Options:** Users can select their profile image from the gallery or capture a new photo using the camera.
+
+**3) Persistent Image Storage:**  The selected or captured image is saved locally, and the URI is stored in *SharedPreferences* for persistent use.
+
+#### How to use it
+
+ **1. Setup Permissions and Provider in AndroidManifest.xml:**
+```
+<!-- Camera and External Storage Permissions -->
+<uses-feature
+    android:name="android.hardware.camera"
+    android:required="false" />
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+<!-- Provider -->
+<provider
+    android:name="androidx.core.content.FileProvider"
+    android:authorities="your.package.name.fileProvider"
+    android:exported="false"
+    android:grantUriPermissions="true">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+</provider>
+```
+
+**2. Define File Paths in res/xml/file_paths.xml:**
+```
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-files-path name="images" path="Pictures/" />
+</paths>
+```
+
+**3. Add a Container in Your Layout:**
+Notice: For a better display the layout_width should be equal to the layout_height
+```
+FrameLayout
+    android:id="@+id/frame_layout_container"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_centerInParent="true"
+    android:foregroundGravity="center"
+    android:padding="25dp"
+    android:layout_marginTop="16dp"/>
+```
+
+**4: Integrate ProfileImagePickerFragment in Your Activity:**
+```
+// Inside your activity or fragment
+ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(
+    this, //Context 
+    getSupportFragmentManager(), //FragmentManager 
+    R.id.frame_layout_container, //Container
+    getPackageName(), //Package name
+    -1 // Pass your initial custom image resource ID or -1 for use the default image
+);
+
+builder.showFragment();
+```
 
 ## License
 ```
