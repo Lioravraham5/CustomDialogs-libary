@@ -31,6 +31,11 @@ dependencies {
 **1) Customizable** Registration Options: Allows developers to add various registration fields such as Name, Last Name, Email, Password, Phone Number, City, and Address.
 
 **2) Validation:** Built-in validation checks for each registration option, ensuring data integrity and accuracy (e.g., email format, password strength, etc.).
+- Valid Email: An email is considered valid if it follows the standard email format (e.g., example@domain.com).
+- Valid Password: At least 8 characters, including one uppercase letter, one lowercase letter, and one number.
+- Valid Phone Number: Follows standard phone number formats.
+- Valid Name: Contains only letters, spaces, and hyphens.
+- Valid Address: Contains letters, numbers, hyphens, and spaces.
 
 **3) Customizable UI:** Developers can customize the dialog's appearance, including the title, button text, and button color and icons.
 
