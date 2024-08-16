@@ -1,5 +1,5 @@
-# CustomRegisterLibrary
-The CustomDialogs Library for Android provides a set of customizable dialog fragments designed to streamline common app interactions. This library includes:
+# Custom Dialogs Library
+The Custom Library for Android provides a set of customizable dialog fragments designed to streamline common app interactions. This library includes:
 
 **Registration DialogFragment:** A customizable registration dialog that allows developers to easily collect user details like name, email, and password with built-in validity checks.
 
