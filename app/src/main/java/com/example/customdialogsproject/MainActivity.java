@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //Test: Registration DialogFragment
         TextView title = findViewById(R.id.my_title);
 
-        RegistrationDialogBuilder builder = new RegistrationDialogBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container);
+//        RegistrationDialogBuilder builder = new RegistrationDialogBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container);
 
 //        // Add registration options
 //        builder.addNameOption(R.drawable.user, "Enter your name");
@@ -74,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
 //
 //        ratingAppDialogBuilder.showRatingDialog();
 
-//        //Test: ProfileImagePicker Fragment
-//        ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container, getPackageName(),-1);
-//        builder.showFragment();
+        //Test: ProfileImagePicker Fragment
+        ProfileImagePickerFragmentBuilder builder = new ProfileImagePickerFragmentBuilder(this, getSupportFragmentManager(), R.id.frame_layout_container, getPackageName(),-1);
+        builder.showFragment();
 
     }
 
